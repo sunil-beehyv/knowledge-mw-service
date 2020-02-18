@@ -100,7 +100,6 @@ module.exports = function (app) {
 
   app.use(
     '/action/content/v3/create',
-    requestMiddleware.validateUserToken,
     proxy(contentServiceBaseUrl, {
       limit: reqDataLimitOfContentUpload,
       proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
