@@ -116,7 +116,6 @@ module.exports = function (app) {
   )
 
   app.use(['/action/content/v3/hierarchy/add', '/action/content/v3/hierarchy/remove'],
-    requestMiddleware.validateUserToken,
     proxy(contentServiceBaseUrl, {
       limit: reqDataLimitOfContentUpload,
       proxyReqOptDecorator: function (proxyReqOpts, srcReq) {
